@@ -21,14 +21,14 @@ public class ToDoNoteDataLoader implements CommandLineRunner {
     }
 
     private void loadData() {
-        if (toDoNoteRepository.count() == 0) {
-            ToDoNote toDoNote = new ToDoNote("Do smth");
-            ToDoNote toDoNote2 = new ToDoNote("Make smth");
-
-            toDoNoteRepository.save(toDoNote);
-            toDoNoteRepository.save(toDoNote2);
-        }
-
-        log.info("Number of note: {}", toDoNoteRepository.count());
+//        if (toDoNoteRepository.count() == 0) {
+//            ToDoNote toDoNote = new ToDoNote("Do smth");
+//            ToDoNote toDoNote2 = new ToDoNote("Make smth");
+//
+//            toDoNoteRepository.save(toDoNote);
+//            toDoNoteRepository.save(toDoNote2);
+//        }
+//
+//        log.info("Number of note: {}", toDoNoteRepository.count());
     }
 }

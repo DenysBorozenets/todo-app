@@ -27,9 +27,15 @@
             <tr th:each="note : ${toDoNotes}">
                 <td th:text="${note.id}">note id</td>
                 <td th:text="${note.description}">note description</td>
-                <td th:text="${note.isCompleted}">Completed</td>
+                <td th:text="${note.completed}">Completed</td>
                 <td th:text="${note.dateOfCreation}">Date of Creation</td>
                 <td th:text="${note.modifiedDate}">Modified Date</td>
+                <td>
+                    <div class="btn btn-group-sm" role="group">
+                        <a class="btn btn-info" th:href="@{/edit/{id}(id=${note.id})}">Edit</a>
+                        <a class="btn btn-default" th:href="@{/delete/{id}(id=${note.id})}">Delete</a>
+                    </div>
+                </td>
             </tr>
 
             </tbody>

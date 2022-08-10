@@ -23,7 +23,7 @@ public class ToDoNote {
     @Getter
     @Setter
     @Column(name = "is_completed")
-    private boolean isCompleted;
+    private boolean completed;
 
     @Getter
     @Setter
@@ -40,23 +40,24 @@ public class ToDoNote {
 
     public ToDoNote(String description, boolean isCompleted, Instant modifiedDate, Instant completionDate) {
         this.description = description;
-        this.isCompleted = false;
+        this.completed = false;
         this.dateOfCreation = Instant.now();
         this.modifiedDate = Instant.now();
     }
 
-    public ToDoNote(String description) {
-        this.description = description;
-    }
+//    public ToDoNote(String description) {
+//        this.description = description;
+//    }
 
     @Override
     public String toString() {
         return "ToDoNote{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
-                ", isCompleted=" + isCompleted +
+                ", isCompleted=" + completed +
                 ", dateOfCreation=" + dateOfCreation +
                 ", modifiedDate=" + modifiedDate +
                 '}';
     }
+
 }
