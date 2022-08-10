@@ -15,6 +15,7 @@
             <div class="form-group">
                 <label for="description">Description</label>
                 <input class="form-control" type="text" th:field="*{description}" id="description" placeholder="description">
+                <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
             </div>
 
             <button type="submit" class="btn btn-success"> Add Note!</button>

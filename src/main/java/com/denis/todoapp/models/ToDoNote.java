@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.Instant;
 
 @Entity
@@ -18,6 +19,7 @@ public class ToDoNote {
 
     @Getter
     @Setter
+    @NotBlank(message = "Need to write description")
     private String description;
 
     @Getter
@@ -44,10 +46,6 @@ public class ToDoNote {
         this.dateOfCreation = Instant.now();
         this.modifiedDate = Instant.now();
     }
-
-//    public ToDoNote(String description) {
-//        this.description = description;
-//    }
 
     @Override
     public String toString() {

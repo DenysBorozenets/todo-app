@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.time.Instant;
+import java.time.ZoneId;
 
 @Controller
 public class ToDoMainController {
@@ -29,6 +30,10 @@ public class ToDoMainController {
         log.debug("request for GET index page");
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("toDoNotes", toDoNoteRepository.findAll());
+        modelAndView.addObject("today", Instant.now()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate()
+                .getDayOfWeek());
         return modelAndView;
     }
 
