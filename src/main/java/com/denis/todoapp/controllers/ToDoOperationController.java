@@ -35,4 +35,11 @@ public class ToDoOperationController {
         toDoNoteRepository.delete(note);
         return "redirect:/";
     }
+
+    @GetMapping("/create-note")
+    public String showCreateForm(ToDoNote toDoNote) {
+        return "add-note";
+    }
+
+
 }

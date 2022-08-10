@@ -24,7 +24,7 @@
             </thead>
             <tbody>
             <!--/*@thymesVar id="toDoNotes" type="com"*/-->
-            <tr th:each="note : ${toDoNotes}">
+            <tr th:each="note : ${toDoNotes}" th:class="${note.completed} ? success : warning">
                 <td th:text="${note.id}">note id</td>
                 <td th:text="${note.description}">note description</td>
                 <td th:text="${note.completed}">Completed</td>
@@ -40,6 +40,7 @@
 
             </tbody>
         </table>
+        <p><a class="btn btn-success" href="/create-note">Add a note</a></p>
 
     </div>
 

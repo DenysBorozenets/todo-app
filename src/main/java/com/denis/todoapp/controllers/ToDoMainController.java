@@ -45,4 +45,19 @@ public class ToDoMainController {
         toDoNoteRepository.save(toDoNote);
         return "redirect:/";
     }
+
+    @PostMapping("/todo")
+    public String createNote(@Valid ToDoNote toDoNote,
+                             BindingResult result,
+                             Model model) {
+        if (result.hasErrors()) {
+            return "add-note";
+        }
+        toDoNote.setDateOfCreation(Instant.now());
+        toDoNote.setModifiedDate(Instant.now());
+
+        toDoNoteRepository.save(toDoNote);
+        return "redirect:/";
+
+    }
 }
